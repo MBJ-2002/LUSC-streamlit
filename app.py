@@ -42,9 +42,10 @@ with left_col:
         model = load_cached_model()
         input_data = preprocess_image(img)
         
-        start_time = time.time()
-        predictions = model.predict(input_data)
-        inference_time = time.time() - start_time
+        with st.spinner("🔍 Making prediction..."):
+            start_time = time.time()
+            predictions = model.predict(input_data)
+            inference_time = time.time() - start_time
         
         predicted_index = np.argmax(predictions[0])
         predicted_class = class_names[predicted_index]
