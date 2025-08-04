@@ -50,6 +50,7 @@ with left_col:
         predicted_index = np.argmax(predictions[0])
         predicted_class = class_names[predicted_index]
         confidence_score = predictions[0][predicted_index]
+        confidence_score = confidence_score * 100
 
         # Probability plot (below everything)
         st.markdown("### Top 5 Predictions")
