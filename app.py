@@ -63,7 +63,7 @@ with right_col:
     if uploaded_img:
         col1, col2, col3 = st.columns(3)
         col1.metric("Class", predicted_class)
-        col2.metric("Confidence", f"{confidence_score:.2f}")
+        col2.metric("Confidence", f"{confidence_score:.2f} %")
         col3.metric("Time", f"{inference_time*1000:.1f} ms")
     else:
         st.info("Upload an image to see prediction results.")
